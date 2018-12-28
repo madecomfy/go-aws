@@ -13,7 +13,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
     && rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 RUN curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > /usr/local/bin/cc-test-reporter \
-    && chmod +x /usr/bin/cc-test-reporter
+    && chmod +x /usr/local/bin/cc-test-reporter
 
 RUN \
 	go get -u github.com/rubenv/sql-migrate/...
