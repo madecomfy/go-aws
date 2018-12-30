@@ -11,8 +11,7 @@ RUN \
 
 RUN \
 	apk add docker && \
-	rc-update add docker boot && \
-	service docker start
+	rc-update add docker boot
 
 ENV DOCKERIZE_VERSION v0.6.1
 RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
