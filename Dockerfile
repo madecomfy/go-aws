@@ -1,4 +1,4 @@
-FROM golang:1.10-alpine
+FROM golang:1.11.4-alpine3.8
 
 RUN \
 	apk -Uuv add --no-cache build-base groff less python py-pip git curl openssl zip && \
