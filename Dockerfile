@@ -1,15 +1,5 @@
 FROM golang:1.11.4-stretch
 
-RUN \
-	apk -Uuv add --no-cache build-base openrc groff less python py-pip git curl openssl zip && \
-	pip install --upgrade pip && \
-	pip install awscli --upgrade && \
-	apk --purge -v del py-pip && \
-	echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
-	apk update && \
-	rm -Rf /var/cache/apk/*
-
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-utils gcc libsasl2-dev lib32z1-dev libldap2-dev libssl-dev openssl \
     python-software-properties software-properties-common build-essential \
