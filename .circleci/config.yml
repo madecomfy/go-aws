@@ -18,6 +18,6 @@ jobs:
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              docker tag madecomfyau/go-aws madecomfyau/go-aws:1.11
+              docker tag madecomfyau/go-aws madecomfyau/go-aws:1.12
               docker push madecomfyau/go-aws
             fi
