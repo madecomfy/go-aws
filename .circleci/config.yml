@@ -17,7 +17,7 @@ jobs:
             docker login --username=$DOCKER_HUB_USER --password=$DOCKER_HUB_PASS
       - deploy:
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              docker tag madecomfyau/go-aws madecomfyau/go-aws:1.12
+            if [ ! -z "$CIRCLE_TAG" ]; then
+              docker tag madecomfyau/go-aws madecomfyau/go-aws:1.14
               docker push madecomfyau/go-aws
             fi

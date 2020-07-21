@@ -1,7 +1,7 @@
-FROM golang:1.12.7-alpine3.10
+FROM golang:1.14.6-alpine3.12
 
 RUN \
-	apk -Uuv add --no-cache build-base openrc groff less python py-pip git curl openssl openssh zip && \
+	apk -Uuv add --no-cache build-base openrc groff less python3 py-pip git curl openssl openssh zip && \
 	pip install --upgrade pip && \
 	pip install awscli --upgrade && \
 	apk --purge -v del py-pip && \
