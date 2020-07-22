@@ -21,3 +21,12 @@ jobs:
               docker tag madecomfyau/go-aws madecomfyau/go-aws:1.14
               docker push madecomfyau/go-aws
             fi
+
+workflows:
+  version: 2
+  deploy-workflow:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /^v[0-9]+(\.[0-9]+)*$/
